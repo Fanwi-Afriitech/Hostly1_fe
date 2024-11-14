@@ -3,6 +3,7 @@
 }
 .nav-link{
     color: white !important;
+    margin-right: 10px !important;
 }
 .navbar-brand{
     color: white !important;  
@@ -16,4 +17,7 @@
     font-weight: bold;
     font-size: 30px;
     margin-left: 8px;
+  }
+  .mmr{
+    margin-right: 7px;
   }

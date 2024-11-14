@@ -1,0 +1,51 @@
+body {
+    background-color: #f0f2f5; /* Light grey background */
+  }
+  
+  .register-screen {
+    background-color: #f0f2f5; /* Light grey background */
+  }
+  
+  .register-form {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .register-form input.form-control {
+    height: 45px;
+    font-size: 1rem;
+  }
+  
+  .register-form button {
+    background-color: #007bff; /* Bootstrap Primary Color */
+    font-size: 1.1rem;
+    padding: 0.75rem;
+    transition: all 0.3s ease;
+  }
+  
+  .register-form button:hover {
+    background-color: #0056b3;
+  }
+  
+  @media (max-width: 768px) {
+    .register-screen {
+      padding: 1rem;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .register-form {
+      padding: 1.5rem;
+    }
+  
+    .register-form h1 {
+      font-size: 1.5rem;
+    }
+  
+    .register-form button {
+      font-size: 1rem;
+    }
+  }
+  
