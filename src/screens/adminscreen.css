@@ -1,0 +1,50 @@
+.bs{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin-top: 20px !important;
+    border-radius: 5px !important;
+    padding: 20px !important;
+}
+.styled-table thead {
+    background-color: black;
+    color: white;
+}
+
+.styled-table tbody tr.even-row {
+    background-color: #f0f0f0;  /* Light grey */
+}
+
+.styled-table tbody tr.odd-row {
+    background-color: #e0e0e0;  /* Slightly darker grey */
+}
+.btn{
+    background-color: black !important;
+    color: white !important;
+    box-shadow: none !important;
+    
+}
+/* Add this CSS to style the divs and inputs */
+.room-form-container {
+    padding: 20px;
+    background-color: #f9f9f9; /* Light background for better visibility */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+}
+
+.room-form-container .form-control {
+    margin-bottom: 15px; /* Add margin between input fields */
+    border-radius: 5px; /* Rounded input borders */
+}
+
+.room-form-container .text-end button {
+    background-color: #007bff; /* Bootstrap primary color */
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px 20px;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.room-form-container .text-end button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+

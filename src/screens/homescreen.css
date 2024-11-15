@@ -1,0 +1,31 @@
+/* Container styling to align items in a row */
+.row {
+    display: flex;                
+    align-items: center;          /* Align elements vertically */
+    gap: 15px;                    /* Space between elements */
+    margin-top: 30px;             /* Add some spacing from the top */
+    
+}
+.ral{
+    width: 75%;
+    margin-left: 150px;
+}
+
+
+.col-md-3, .col-md-5 {
+    flex: 1;                     
+}
+
+/* Specific styling for the select element */
+.room-select {
+    width: 100%;                  /* Ensure the select element takes up full width of its column */
+    max-width: 150px;             /* Control max width for uniformity */
+}
+
+/* Add padding, box-shadow or border to differentiate elements visually if needed */
+.bs {
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    background-color: #f8f8f8;    /* Light background for the container */
+    border-radius: 8px;
+}
