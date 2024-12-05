@@ -56,7 +56,7 @@ export function Mybookings() {
         const fetchBookings = async () => {
             try {
                 setloading(true)
-                const rooms = await axios.post('http://localhost:5000/api/bookings/getbookingsbyuserid', { userid: user._id });
+                const rooms = await axios.post('https://hostly-be.onrender.com/api/bookings/getbookingsbyuserid', { userid: user._id });
                 console.log(rooms.data);
                 setbookings(rooms.data)
                 setloading(false)

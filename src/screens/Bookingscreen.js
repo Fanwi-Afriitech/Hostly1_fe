@@ -24,7 +24,7 @@ const Bookingscreen = () => {
         const fetchData = async () => {
             try {
                 setloading(true)
-                const response = await axios.post('http://localhost:5000/api/rooms/getroombyid', { roomid });
+                const response = await axios.post('https://hostly-be.onrender.com/api/rooms/getroombyid', { roomid });
                 setRoom(response.data);
                 settotalamount(response.data.rentperday * totaldays)
                 setloading(false)
@@ -54,7 +54,7 @@ const Bookingscreen = () => {
        }
        try {
         setloading(true)
-         const result= await axios.post('http://localhost:5000/api/bookings/bookroom',bookingDetails)
+         const result= await axios.post('https://hostly-be.onrender.com/api/bookings/bookroom',bookingDetails)
          setloading(false)
          Swal.fire('Congratulations',' Room successfully booked','sucess').then(result=>{
             window.location.href='/bookings'

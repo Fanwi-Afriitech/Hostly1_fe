@@ -20,7 +20,7 @@ const handleLogin = async () => {
       };
         try {
             setloading(true)
-            const response = await axios.post('http://localhost:5000/api/users/login', user);
+            const response = await axios.post('https://hostly-be.onrender.com/api/users/login', user);
             setloading(false)
 
             localStorage.setItem('currentUser', JSON.stringify(response.data))

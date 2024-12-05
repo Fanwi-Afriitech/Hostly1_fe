@@ -23,7 +23,7 @@ const Registerscreen = () => {
       };
     try {
       setloading(true)
-      const response = await axios.post('http://localhost:5000/api/users/register', user);
+      const response = await axios.post('https://hostly-be.onrender.com/api/users/register', user);
       console.log(response.data);
       setloading(false)
       setsucess(true)

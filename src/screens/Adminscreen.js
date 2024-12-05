@@ -55,7 +55,7 @@ export function Bookings() {
         const fetchBookings = async () => {
             try {
 
-                const response = await axios.get('http://localhost:5000/api/bookings/getallbookings');
+                const response = await axios.get('https://hostly-be.onrender.com/api/bookings/getallbookings');
                 setbookings(response.data)
                 setloading(false)
             } catch (error) {
@@ -121,7 +121,7 @@ export function Rooms() {
         const fetchRooms = async () => {
             try {
 
-                const response = await axios.get('http://localhost:5000/api/rooms/getallrooms');
+                const response = await axios.get('https://hostly-be.onrender.com/api/rooms/getallrooms');
 
                 setrooms(response.data)
                 setloading(false)
@@ -194,7 +194,7 @@ export function Users() {
         const fetchUsers = async () => {
             try {
 
-                const response = await axios.get('http://localhost:5000/api/users/getallusers');
+                const response = await axios.get('https://hostly-be.onrender.com/api/users/getallusers');
 
                 setusers(response.data)
                 setloading(false)
@@ -277,7 +277,7 @@ export function Addroom() {
         }
         try {
 
-            const result = await axios.post('http://localhost:5000/api/rooms/addroom', newroom)
+            const result = await axios.post('https://hostly-be.onrender.com/api/rooms/addroom', newroom)
            
             console.log(result.data)
 

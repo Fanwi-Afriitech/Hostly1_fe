@@ -32,7 +32,7 @@ const Homescreen = () => {
         const fetchData = async () => {
             try {
                 setloading(true)
-                const response = await axios.get('http://localhost:5000/api/rooms/getallrooms');
+                const response = await axios.get('https://hostly-be.onrender.com/api/rooms/getallrooms');
 
                 setRooms(response.data);
                 setduplicaterooms(response.data);
