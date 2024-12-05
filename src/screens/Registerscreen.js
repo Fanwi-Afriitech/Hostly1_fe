@@ -1,5 +1,5 @@
 import './login.css';
-import React, { useState, useEffect } from 'react';
+import React, { useState} from 'react';
 import axios from 'axios'
 import Loader from '../components/Loader';
 import Errors from '../components/Errors';
@@ -15,7 +15,7 @@ const Registerscreen = () => {
   const[sucess,setsucess]= useState()
 
   const handleRegister = async () => {
-    if (password == confirmPassword) {
+    if (password === confirmPassword) {
       const user = {
         name,
         email,

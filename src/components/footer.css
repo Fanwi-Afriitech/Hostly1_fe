@@ -1,0 +1,17 @@
+.hy{
+    background-color: black;
+    width: 100%;
+    color: white;
+    }
+    .bet{
+        width: 100%;
+    }
+    .footer-container { /* Make sure this class is added to the div wrapping your footer content */
+        width: 100%;
+        overflow-x: hidden; /* This will hide horizontal overflow */
+      }
+      .footer-container .row {
+        display: flex;
+        flex-wrap: nowrap; /* Prevents wrapping */
+        
+      }

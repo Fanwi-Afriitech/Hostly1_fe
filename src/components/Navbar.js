@@ -16,11 +16,13 @@ function Navbar() {
 
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav  ">
+              <li class="nav-item"> 
+                  <a class="nav-link active " href="/home">Home</a>
+                          
+              </li>
               <li class="nav-item">
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"><i class="fa fa-bars" style={{color:'white'}}></i></span>
-              </button>
-                          <a class="nav-link active " href="/home">Home</a>
+                    <a class="nav-link active " href="/aboutus">About Us</a>
+                          
               </li>
               {user ? (
                 <>

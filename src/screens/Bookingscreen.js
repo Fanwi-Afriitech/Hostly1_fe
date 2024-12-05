@@ -99,7 +99,8 @@ const Bookingscreen = () => {
                         token={onToken}
                         amount={totalamount *100}
                         currency='USD'
-                        stripeKey="pk_test_51Nt6DvFFr1q0QPEdWKMu4ncDCmOwFVWt1OX8hvuPRiuDRAABsV1i2xRlZtGale9aeqmyxb1qyIawP55IanN4565n00viKBzgbF"
+                        stripeKey="pk_test_51BTUDGJAJfZb9HEBwDg86TN1KNprHjkfipXmEDMb0gSCassK5T3ZfxsAbcgKVmAIXF7oZ6ItlZZbXO6idTHE67IM007EwQ4uN3"
+                        
                         >
                           <button className='btn btn-primary' >Pay Now</button>
                         </StripeCheckout>

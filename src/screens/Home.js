@@ -5,20 +5,28 @@ import Room from '../components/Room';
 import dayjs from 'dayjs';
 import isBetween from 'dayjs/plugin/isBetween'; 
 import { DatePicker, Space } from 'antd';
-import './homescreen.css'
+import './home.css'
 import Loader from '../components/Loader';
-import { FaRobot } from 'react-icons/fa'; // For a chatbot icon
-import Chatbot from '../components/Chatbot';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css'; // basic Swiper styles
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFacebookF, faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons';
+
+import 'swiper/css/effect-fade';
+import 'swiper/css/autoplay';
+import { Autoplay, EffectFade } from 'swiper/modules';
 import Footer from '../components/Footer';
-import Navbar from '../components/Navbar';
+
+
+
+
+
 
 dayjs.extend(isBetween);
 const { RangePicker } = DatePicker;
 
-
-
-const Homescreen = () => {
-
+const Home = () => {
+  
     const [rooms, setRooms] = useState([]);
     const [loading, setloading] = useState();
     const [error, seterror] = useState();
@@ -27,7 +35,6 @@ const Homescreen = () => {
     const [duplicaterooms, setduplicaterooms] = useState([])
     const[searchkey, setsearchkey]=useState('')
     const[type,settype]=useState('all')
-    const [showChatbot, setShowChatbot] = useState(false); // State to toggle chatbot visibility
     useEffect(() => {
         const fetchData = async () => {
             try {
@@ -102,10 +109,30 @@ const Homescreen = () => {
        }
     }
     return (
-        <div className="container">
-            
+       
+        <div >
+                {/* <!-- Carousel --> */}
+                
+            {/* Swiper Component */}
+            <Swiper
+                 modules={[Autoplay, EffectFade]}
+                spaceBetween={30}
+                effect={"fade"}
+                loop={true}
+                autoplay={{
+                    delay: 3500,
+                    disableOnInteraction: false
+                }}
+                className="mySwiper"
+            >
+                <SwiperSlide className='swiper-slide'><img src="/images/carousel/1.png" alt="Carousel 1" className="w-100 d-block" /></SwiperSlide>
+                <SwiperSlide><img src="/images/carousel/4.png" alt="Carousel 2" className="w-100 d-block" /></SwiperSlide>
+                <SwiperSlide><img src="/images/carousel/2.jpg" alt="Carousel 3" className="w-100 d-block" /></SwiperSlide>
+                <SwiperSlide><img src="/images/carousel/5.png" alt="Carousel 4" className="w-100 d-block" /></SwiperSlide>
+            </Swiper> 
             {/* implementing the date range filter */}
-            <div className='row mt-5 bs ral'>
+            <div className='row mt-5 bs ral '>
+            <h5>Check Booking Availability</h5>
                 <div className=' col-md-3'>
                     <RangePicker onChange={filterByDate} />
                 </div>
@@ -127,62 +154,57 @@ const Homescreen = () => {
 
 
 
-            <div className='row mt-5 justify-content-center'>
+    <div className='row mt-5 justify-content-center'>
                 {loading ? (
                     <Loader/>
                 ) : (rooms.map(room => {
-                    return <div className='col-md-9 mt-2'>
+                    return <div className='col-md-9 mt-2 '>
                         <Room room={room} fromdate={fromdate} todate={todate} />
                     </div>
                 }))}
 
 
             </div>
-             {/* Floating Chatbot Icon */}
-             <div
-                style={{
-                    position: 'fixed',
-                    bottom: '20px',
-                    right: '20px',
-                    zIndex: 1000,
-                    cursor: 'pointer',
-                    background: '#007bff',
-                    color: 'white',
-                    borderRadius: '50%',
-                    padding: '15px',
-                    boxShadow: '0 4px 6px rgba(0,0,0,0.1)'
-                }}
-                onClick={() => setShowChatbot(!showChatbot)}
-            >
-                <FaRobot size={24} />
-            </div>
+         {/* <!-- Reach us --> */}
+    <h2 class="mt-2 pt-4 mb-4  text-center fw-bold h-font">REACH US</h2>
+    <div class="container">
+        <div class="row rch">
+            <div class="col-lg-8 col-md-8 p-4 mb-lg-0 mb-3 bg-white rounded">
+                <iframe height="320px" class="w-100 rounded" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.9167084301002!2d36.876638974709394!3d-1.218089135554836!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f15f826d2697b%3A0x283746033cb1b5a5!2sUnited%20States%20International%20University%20Africa!5e0!3m2!1sen!2ske!4v1728632094684!5m2!1sen!2ske"  loading="lazy" ></iframe>
 
-            {/* Chatbot Popup */}
-            {showChatbot && (
-                <div
-                    style={{
-                        position: 'fixed',
-                        bottom: '80px',
-                        right: '20px',
-                        width: '300px',
-                        height: '520px', // Increased height for better usability
-                        background: 'white',
-                        border: '1px solid #ddd',
-                        borderRadius: '10px',
-                        boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
-                        zIndex: 1000,
-                        overflow: 'hidden', // Ensures content stays within bounds
-                        display: 'flex', // Ensures the chatbot fits inside flexibly
-                        flexDirection: 'column',
-                    }}
-                >
-                    <Chatbot/>
-                </div>
-            )}
-            
-            
+            </div>
+            <div class="col-lg-4 col-md-4">
+               <div class="bg-white p-4 rounded mb-4">
+                    <h5>Call Us</h5>
+                    <a href="tel: +254796632214" class="d-inline-block mb-2 text-decoration-none text-dark">
+                        <i class="bi bi-telephone-fill"></i>(254) 796632214
+                    </a>
+               </div>
+                <div class="bg-white p-4 rounded mb-4">
+                    <h5>Follow Us</h5>
+                    <a href="#" className=" text-black d-inline-block mb-2 text-dark text-decoration-none">
+                        <FontAwesomeIcon icon={faFacebookF} /> &nbsp; Facebook
+                    </a> <br/>
+                    <a href="#" className=" text-black d-inline-block mb-2 text-dark text-decoration-none">
+                        <FontAwesomeIcon icon={faInstagram} /> &nbsp; Instagram
+                    </a> <br/>
+                    <a href="#" className="text-black d-inline-block text-dark text-decoration-none">
+                        <FontAwesomeIcon icon={faTwitter} /> &nbsp; Twitter
+                    </a> <br/>
+             
+               </div>
+            </div>
+        </div>
+    </div>
+
+   
+ 
+           
         </div>
     )
 }
 
-export default Homescreen
+  
+
+
+export default Home
